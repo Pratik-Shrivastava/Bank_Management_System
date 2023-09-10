@@ -1,7 +1,6 @@
 package bank.management.system;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 
 public class Login extends JFrame {
     Login()
@@ -36,10 +35,34 @@ public class Login extends JFrame {
 
         JLabel label = new JLabel(i3);
         //we have to change the location of the image.
-        label.setBounds(10, 10, 100, 100);
+        label.setBounds(40, 10, 100, 100);
         //but still we will face problem because we have layouts which are default.
         setLayout(null);
         add(label);
+
+        //we want to change the color of the frame.
+        getContentPane().setBackground(Color.WHITE);
+
+        //now we want to add some texts in the frame.
+        JLabel text = new JLabel("Welcome to ATM");
+        //set the bounds of the text as we had change the layout to null
+        text.setBounds(200, 40, 400, 40);
+
+        //we want to change the font of the text.
+        text.setFont(new Font("Osward", Font.BOLD, 38));
+        add(text);
+
+        JLabel cardNo = new JLabel("Card No:");
+        cardNo.setFont(new Font("Osward",Font.BOLD, 28));
+        cardNo.setBounds(120, 150, 400, 40);
+        add(cardNo);
+
+        JLabel pin = new JLabel("PIN:");
+        pin.setFont(new Font("Osward",Font.BOLD, 28));
+        pin.setBounds(120, 230, 400, 40);
+        add(pin);
+
+        //now we want to add
 
 
     }
