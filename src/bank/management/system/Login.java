@@ -35,7 +35,7 @@ public class Login extends JFrame {
 
         JLabel label = new JLabel(i3);
         //we have to change the location of the image.
-        label.setBounds(40, 10, 100, 100);
+        label.setBounds(100, 10, 100, 100);
         //but still we will face problem because we have layouts which are default.
         setLayout(null);
         add(label);
@@ -46,23 +46,52 @@ public class Login extends JFrame {
         //now we want to add some texts in the frame.
         JLabel text = new JLabel("Welcome to ATM");
         //set the bounds of the text as we had change the layout to null
-        text.setBounds(200, 40, 400, 40);
+        text.setBounds(270, 40, 400, 40);
 
         //we want to change the font of the text.
         text.setFont(new Font("Osward", Font.BOLD, 38));
         add(text);
 
         JLabel cardNo = new JLabel("Card No:");
+
+
         cardNo.setFont(new Font("Osward",Font.BOLD, 28));
-        cardNo.setBounds(120, 150, 400, 40);
+        cardNo.setBounds(120, 150, 150, 30);
         add(cardNo);
+        //we want to add box
+        JTextField cardTextField = new JTextField();
+        cardTextField.setBounds(300,150,250,30);
+        add(cardTextField);
 
         JLabel pin = new JLabel("PIN:");
         pin.setFont(new Font("Osward",Font.BOLD, 28));
-        pin.setBounds(120, 230, 400, 40);
+        pin.setBounds(120, 220, 150, 30);
         add(pin);
 
-        //now we want to add
+        JTextField pinTextField = new JTextField();
+        pinTextField.setBounds(300,220,250,30);
+        add(pinTextField);
+
+        //now we want to add buttons to the frame.
+        JButton login = new JButton("SIGN IN");
+        login.setBounds(300,300,100,30);
+        login.setBackground(Color.BLACK);
+        login.setForeground(Color.WHITE);
+        add(login);
+
+        JButton clear = new JButton("CLEAR");
+        clear.setBounds(450,300,100,30);
+        clear.setBackground(Color.BLACK);
+        clear.setForeground(Color.WHITE);
+        add(clear);
+
+        JButton signUp = new JButton("SIGN UP");
+        signUp.setBounds(300,350,250,30);
+        signUp.setBackground(Color.BLACK);
+        signUp.setForeground(Color.WHITE);
+        add(signUp);
+
+
 
 
     }
