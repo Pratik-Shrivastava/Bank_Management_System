@@ -3,6 +3,8 @@ package bank.management.system;
 import javax.swing.*;
 import java.awt.*;
 import java.util.Random;
+//we have to import package for calendar class.
+import com.toedter.calendar.JDateChooser;
 
 public class SignupOne extends JFrame{
     SignupOne()
@@ -13,7 +15,7 @@ public class SignupOne extends JFrame{
         getContentPane().setBackground(Color.WHITE);
 
         setTitle("NEW ACCOUNT APPLICATION FORM - PAGE 2");
-        setSize(800, 700);
+        setSize(800, 800);
         setVisible(true);
         setLocation(350, 10);
         setLayout(null);
@@ -26,7 +28,7 @@ public class SignupOne extends JFrame{
 
         JLabel personalDetails = new JLabel("Page 1: Personal Details");
         personalDetails.setFont(new Font("Raleway", Font.BOLD, 22));
-        personalDetails.setBounds(290, 60, 400, 30);
+        personalDetails.setBounds(290, 80, 400, 30);
         add(personalDetails);
 
         JLabel name = new JLabel("Name:");
@@ -54,10 +56,36 @@ public class SignupOne extends JFrame{
         dob.setBounds(100, 240, 150, 30);
         add(dob);
 
+        JDateChooser dateChooser = new JDateChooser();
+        dateChooser.setBounds(300, 240, 400, 30);
+        dateChooser.setForeground(new Color(105,105,105));
+        dateChooser.setFont(new Font("Raleway", Font.ITALIC, 18));
+        add(dateChooser);
+
         JLabel gender = new JLabel("Gender:");
         gender.setFont(new Font("Raleway", Font.BOLD, 20));
         gender.setBounds(100, 290, 150, 30);
         add(gender);
+
+        JRadioButton male = new JRadioButton("Male");
+        male.setBounds(300, 290, 100, 30);
+        male.setBackground(Color.WHITE);
+        male.setForeground(Color.BLACK);
+        male.setFont(new Font("Raleway", Font.BOLD, 18));
+        add(male);
+
+        JRadioButton female = new JRadioButton("Female");
+        female.setBounds(420, 290, 100, 30);
+        female.setForeground(Color.BLACK);
+        female.setBackground(Color.WHITE);
+        female.setFont(new Font("Raleway", Font.BOLD, 18));
+        add(female);
+
+        //Now we want that either of the two gender is selected.
+        //This can be done using the button class.
+        ButtonGroup genderGroup = new ButtonGroup();
+        genderGroup.add(male);
+        genderGroup.add(female);
 
         JLabel email = new JLabel("Email:");
         email.setFont(new Font("Raleway", Font.BOLD, 20));
@@ -73,6 +101,34 @@ public class SignupOne extends JFrame{
         marital.setFont(new Font("Raleway", Font.BOLD, 20));
         marital.setBounds(100, 390, 150, 30);
         add(marital);
+
+        JRadioButton married = new JRadioButton("Married");
+        married.setBounds(300, 390, 100, 30);
+        married.setBackground(Color.WHITE);
+        married.setForeground(Color.BLACK);
+        married.setFont(new Font("Raleway", Font.BOLD, 18));
+        add(married);
+
+        JRadioButton unmarried = new JRadioButton("Unmarried");
+        unmarried.setBounds(420, 390, 120, 30);
+        unmarried.setBackground(Color.WHITE);
+        unmarried.setForeground(Color.BLACK);
+        unmarried.setFont(new Font("Raleway", Font.BOLD, 18));
+        add(unmarried);
+
+        JRadioButton other = new JRadioButton("Other");
+        other.setBounds(560, 390, 100, 30);
+        other.setBackground(Color.WHITE);
+        other.setForeground(Color.BLACK);
+        other.setFont(new Font("Raleway", Font.BOLD, 18));
+        add(other);
+
+        //Now we want that either of the two gender is selected.
+        //This can be done using the button class.
+        ButtonGroup maritalGroup = new ButtonGroup();
+        maritalGroup.add(married);
+        maritalGroup.add(unmarried);
+        maritalGroup.add(other);
 
         JLabel address = new JLabel("Address:");
         address.setFont(new Font("Raleway", Font.BOLD, 20));
@@ -113,6 +169,15 @@ public class SignupOne extends JFrame{
         pincodeTextField.setFont(new Font("Raleway", Font.BOLD, 18));
         pincodeTextField.setBounds(300, 590, 400, 30);
         add(pincodeTextField);
+
+        //now we have to add next button
+        JButton next = new JButton("Next");
+        next.setBounds(620, 660, 100, 30);
+        next.setBackground(Color.BLACK);
+        next.setForeground(Color.WHITE);
+        next.setFont(new Font("Raleway", Font.BOLD, 18));
+        add(next);
+
 
 
 
