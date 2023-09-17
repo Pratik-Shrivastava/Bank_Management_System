@@ -184,7 +184,9 @@ public class SignupOne extends JFrame implements ActionListener {
         next.setBackground(Color.BLACK);
         next.setForeground(Color.WHITE);
         next.setFont(new Font("Raleway", Font.BOLD, 18));
+        next.addActionListener(this);
         add(next);
+
 
 
 
@@ -198,7 +200,58 @@ public class SignupOne extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent ae)
     {
         String formno = String.valueOf(random);
-        String name = nameTextField.getName();
+        String name = nameTextField.getText();
+        String fname = fnameTextField.getText();
+        String dob = dateChooser.getDateEditor().getUiComponent().getToolTipText();
+        String gender = null;
+        if(male.isSelected())
+        {
+            gender="Male";
+        }
+        else
+        {
+            gender="Female";
+        }
+        String email = emailTextField.getText();
+        String marital = null;
+        if(married.isSelected())
+        {
+            marital = "Married";
+        }
+        else if(unmarried.isSelected())
+        {
+            marital = "Unmarried";
+        }
+        else
+        {
+            marital = "Other";
+        }
+        String address = addressTextField.getText();
+        String city = cityTextField.getText();
+        String state = stateTextField.getText();
+        String pin = pincodeTextField.getText();
+
+        //Now we will create a hit in database.
+        try
+        {
+            if(name.equals(""))
+            {
+                JOptionPane.showMessageDialog(null, "Name is Required");
+            }
+            else
+            {
+                Conn c = new Conn();
+                String query = "insert into signup values('"+formno+"','"+name+"', '"+fname+"', '"+dob+"','"+gender+"','"+email+"','"+marital+"','"+address+"','"+city+"','"+state+"','"+pin+"')";
+                c.s.executeUpdate(query);
+
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println(e);
+        }
+       // "Stirng"+variable+"String"
+
     }
     public static void main(String[] args) {
 
